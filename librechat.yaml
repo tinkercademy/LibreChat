@@ -2,7 +2,7 @@ version: 1.2.4
 cache: true
 
 modelSpecs:
-  enforce: false
+  enforce: true
   list:
     - name: "gpt-4o-mini"
       label: "4o-mini"
@@ -18,9 +18,9 @@ modelSpecs:
 interface:
   customWelcome: "Welcome to Tinker AI Chat! Please use responsibly."
   endpointsMenu: true    # Enable this so users can select Agents
-  modelSelect: true
+  modelSelect: false
   parameters: false      
-  sidePanel: true
+  sidePanel: false
   presets: false
   prompts: false
   bookmarks: false
