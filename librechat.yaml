@@ -15,10 +15,15 @@ modelSpecs:
         endpoint: "openAI"
         model: "gpt-4o"
     - name: "gpt-image-1"
-      label: "GPT Image"
+      label: "GPT Image 1"
       preset:
         endpoint: "openAI"
         model: "gpt-image-1"
+    - name: "dall-e-3"
+      label: "DALL-E 3"
+      preset:
+        endpoint: "openAI"
+        model: "dall-e-3"
 
 interface:
   customWelcome: "Welcome to Tinker AI Chat! Please use responsibly."
