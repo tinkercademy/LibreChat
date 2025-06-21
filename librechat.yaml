@@ -1,0 +1,50 @@
+version: 1.2.8
+cache: true
+
+interface:
+  customWelcome: "Welcome to [Your School Name] AI Assistant! Please use responsibly."
+  
+  endpointsMenu: false
+  modelSelect: true      
+  parameters: false      
+  sidePanel: false
+  presets: false
+  prompts: false
+  bookmarks: false
+  multiConvo: false
+  agents: false
+
+registration:
+  socialLogins: []
+
+rateLimits:
+  fileUploads:
+    ipMax: 50
+    ipWindowInMinutes: 60
+    userMax: 25
+    userWindowInMinutes: 60
+
+endpoints:
+  openAI:
+    apiKey: "${OPENAI_API_KEY}"
+    models:
+      default: ["gpt-4o-mini", "gpt-4o", "gpt-image-1"]
+      fetch: false
+    titleConvo: true
+    titleModel: "gpt-4o-mini"
+    summarize: false
+    forcePrompt: false
+    modelDisplayLabel: "OpenAI"
+
+fileConfig:
+  endpoints:
+    openAI:
+      fileLimit: 3
+      fileSizeLimit: 5
+      totalSizeLimit: 15
+      supportedMimeTypes:
+        - "image/.*"
+        - "application/pdf"
+        - "text/.*"
+  serverFileSizeLimit: 50
+  avatarSizeLimit: 1
