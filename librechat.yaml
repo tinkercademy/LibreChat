@@ -1,6 +1,26 @@
 version: 1.2.4
 cache: true
 
+# Force only these 3 models to appear
+modelSpecs:
+  enforce: true
+  list:
+    - name: "gpt-4o-mini"
+      label: "GPT-4o Mini"
+      preset:
+        endpoint: "openAI"
+        model: "gpt-4o-mini"
+    - name: "gpt-4o"
+      label: "GPT-4o"
+      preset:
+        endpoint: "openAI"
+        model: "gpt-4o"
+    - name: "gpt-image-1"
+      label: "GPT Image"
+      preset:
+        endpoint: "openAI"
+        model: "gpt-image-1"
+
 interface:
   customWelcome: "Welcome to Tinker AI Chat! Please use responsibly."
   
@@ -27,9 +47,6 @@ rateLimits:
 endpoints:
   openAI:
     apiKey: "${OPENAI_API_KEY}"
-    models:
-      default: ["gpt-4o-mini", "gpt-4o", "gpt-image-1"]
-      fetch: false
     titleConvo: true
     titleModel: "gpt-4o-mini"
     summarize: false
