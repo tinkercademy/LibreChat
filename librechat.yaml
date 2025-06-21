@@ -1,17 +1,16 @@
 version: 1.2.4
 cache: true
 
-# Force only these 3 models to appear
 modelSpecs:
   enforce: true
   list:
     - name: "gpt-4o-mini"
-      label: "GPT-4o Mini"
+      label: "4o-mini"
       preset:
         endpoint: "openAI"
         model: "gpt-4o-mini"
     - name: "gpt-4o"
-      label: "GPT-4o"
+      label: "4o"
       preset:
         endpoint: "openAI"
         model: "gpt-4o"
@@ -23,9 +22,8 @@ modelSpecs:
 
 interface:
   customWelcome: "Welcome to Tinker AI Chat! Please use responsibly."
-  
   endpointsMenu: false
-  modelSelect: true      
+  modelSelect: false      # This should hide the model search dropdown
   parameters: false      
   sidePanel: false
   presets: false
@@ -33,35 +31,21 @@ interface:
   bookmarks: false
   multiConvo: false
   agents: false
+  runCode: false        # This removes the code interpreter button
 
-registration:
-  socialLogins: []
-
-rateLimits:
-  fileUploads:
-    ipMax: 50
-    ipWindowInMinutes: 60
-    userMax: 25
-    userWindowInMinutes: 60
-
-endpoints:
-  openAI:
-    apiKey: "${OPENAI_API_KEY}"
-    titleConvo: true
-    titleModel: "gpt-4o-mini"
-    summarize: false
-    forcePrompt: false
-    modelDisplayLabel: "OpenAI"
-
-fileConfig:
-  endpoints:
-    openAI:
-      fileLimit: 3
-      fileSizeLimit: 5
-      totalSizeLimit: 15
-      supportedMimeTypes:
-        - "image/.*"
-        - "application/pdf"
-        - "text/.*"
-  serverFileSizeLimit: 50
-  avatarSizeLimit: 1
+webSearch:
+  # Search Provider Configuration
+  serperApiKey: "${SERPER_API_KEY}"
+  searchProvider: "serper"
+ 
+  # Scraper Configuration
+  firecrawlApiKey: "${FIRECRAWL_API_KEY}"
+  scraperType: "firecrawl" # Options: "firecrawl", "serper"
+ 
+  # Reranker Configuration
+  jinaApiKey: "${JINA_API_KEY}"
+  rerankerType: "jina" # Options: "jina", "cohere"
+ 
+  # General Settings
+  scraperTimeout: 7500 # Timeout in milliseconds for scraper requests (default: 7500)
+  safeSearch: 1 # Options: 0 (OFF), 1 (MODERATE - default), 2 (STRICT)
