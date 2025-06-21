@@ -44,13 +44,3 @@ endpoints:
     apiKey: "${OPENAI_API_KEY}"
     titleConvo: true
     titleModel: "gpt-4o-mini"
-
-webSearch:
-  serperApiKey: "${SERPER_API_KEY}"
-  searchProvider: "serper"
-  firecrawlApiKey: "${FIRECRAWL_API_KEY}"
-  scraperType: "firecrawl"
-  jinaApiKey: "${JINA_API_KEY}"
-  rerankerType: "jina"
-  scraperTimeout: 7500
-  safeSearch: 1
