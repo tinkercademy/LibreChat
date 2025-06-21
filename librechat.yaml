@@ -31,7 +31,8 @@ interface:
   bookmarks: false
   multiConvo: false
   agents: false
-  runCode: false        # This removes the code interpreter button
+  runCode: false        
+  webSearch: false
 
 webSearch:
   # Search Provider Configuration
