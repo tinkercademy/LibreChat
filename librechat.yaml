@@ -2,7 +2,7 @@ version: 1.2.4
 cache: true
 
 modelSpecs:
-  enforce: true
+  enforce: false
   list:
     - name: "gpt-4o-mini"
       label: "4o-mini"
