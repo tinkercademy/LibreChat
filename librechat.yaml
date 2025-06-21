@@ -14,44 +14,37 @@ modelSpecs:
       preset:
         endpoint: "openAI"
         model: "gpt-4o"
-    - name: "gpt-image-1"
-      label: "GPT Image 1"
+    - name: "image-generator"
+      label: "Image Generator"
+      description: "Generate and edit images using GPT-Image-1"
       preset:
-        endpoint: "openAI"
-        model: "gpt-image-1"
-    - name: "dall-e-3"
-      label: "DALL-E 3"
-      preset:
-        endpoint: "openAI"
-        model: "dall-e-3"
+        endpoint: "agents"
+        model: "gpt-4o"
+        greeting: "I can generate and edit images for you using GPT-Image-1. Just describe what you'd like to see!"
 
 interface:
   customWelcome: "Welcome to Tinker AI Chat! Please use responsibly."
   endpointsMenu: false
-  modelSelect: false      # This should hide the model search dropdown
+  modelSelect: false
   parameters: false      
   sidePanel: false
   presets: false
   prompts: false
   bookmarks: false
   multiConvo: false
-  agents: false
+  agents: true           # MUST be true for image generation
   runCode: false        
   webSearch: false
 
+agents:
+  capabilities: ["tools"] # Enable tools for agents
+
+endpoints:
+  openAI:
+    apiKey: "${OPENAI_API_KEY}"
+    titleConvo: true
+    titleModel: "gpt-4o-mini"
+
 webSearch:
-  # Search Provider Configuration
   serperApiKey: "${SERPER_API_KEY}"
-  searchProvider: "serper"
- 
-  # Scraper Configuration
-  firecrawlApiKey: "${FIRECRAWL_API_KEY}"
-  scraperType: "firecrawl" # Options: "firecrawl", "serper"
- 
-  # Reranker Configuration
-  jinaApiKey: "${JINA_API_KEY}"
-  rerankerType: "jina" # Options: "jina", "cohere"
- 
-  # General Settings
-  scraperTimeout: 7500 # Timeout in milliseconds for scraper requests (default: 7500)
-  safeSearch: 1 # Options: 0 (OFF), 1 (MODERATE - default), 2 (STRICT)
+  searchProvider: "ser
