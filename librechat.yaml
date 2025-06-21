@@ -47,4 +47,10 @@ endpoints:
 
 webSearch:
   serperApiKey: "${SERPER_API_KEY}"
-  searchProvider: "ser
+  searchProvider: "serper"
+  firecrawlApiKey: "${FIRECRAWL_API_KEY}"
+  scraperType: "firecrawl"
+  jinaApiKey: "${JINA_API_KEY}"
+  rerankerType: "jina"
+  scraperTimeout: 7500
+  safeSearch: 1
