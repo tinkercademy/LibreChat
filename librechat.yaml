@@ -32,15 +32,15 @@ interface:
   prompts: false
   bookmarks: false
   multiConvo: false
-  agents: true           # MUST be true for image generation
+  agents: true           # Enable agents in interface
   runCode: false        
   webSearch: false
-
-agents:
-  capabilities: ["tools"] # Enable tools for agents
 
 endpoints:
   openAI:
     apiKey: "${OPENAI_API_KEY}"
     titleConvo: true
     titleModel: "gpt-4o-mini"
+  agents:                # Agents configuration goes under endpoints
+    disableBuilder: false
+    capabilities: ["tools"] # Enable tools capability for image generation
