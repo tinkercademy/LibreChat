@@ -14,16 +14,10 @@ modelSpecs:
       preset:
         endpoint: "openAI"
         model: "gpt-4o"
-    - name: "image-generator"
-      label: "Image Generator"
-      description: "Generate and edit images using GPT-Image-1"
-      preset:
-        endpoint: "agents"
-        greeting: "I can generate and edit images for you using GPT-Image-1. Just describe what you'd like to see!"
 
 interface:
   customWelcome: "Welcome to Tinker AI Chat! Please use responsibly."
-  endpointsMenu: false
+  endpointsMenu: true    # Enable this so users can select Agents
   modelSelect: false
   parameters: false      
   sidePanel: false
@@ -31,7 +25,7 @@ interface:
   prompts: false
   bookmarks: false
   multiConvo: false
-  agents: true           # Enable agents in interface
+  agents: true
   runCode: false        
   webSearch: false
 
@@ -40,6 +34,6 @@ endpoints:
     apiKey: "${OPENAI_API_KEY}"
     titleConvo: true
     titleModel: "gpt-4o-mini"
-  agents:                # Agents configuration goes under endpoints
+  agents:
     disableBuilder: false
-    capabilities: ["tools"] # Enable tools capability for image generation
+    capabilities: ["tools"]
