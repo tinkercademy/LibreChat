@@ -18,9 +18,9 @@ modelSpecs:
 interface:
   customWelcome: "Welcome to Tinker AI Chat! Please use responsibly."
   endpointsMenu: true    # Enable this so users can select Agents
-  modelSelect: false
+  modelSelect: true
   parameters: false      
-  sidePanel: false
+  sidePanel: true
   presets: false
   prompts: false
   bookmarks: false
