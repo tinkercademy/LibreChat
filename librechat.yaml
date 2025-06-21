@@ -19,7 +19,6 @@ modelSpecs:
       description: "Generate and edit images using GPT-Image-1"
       preset:
         endpoint: "agents"
-        model: "gpt-4o"
         greeting: "I can generate and edit images for you using GPT-Image-1. Just describe what you'd like to see!"
 
 interface:
