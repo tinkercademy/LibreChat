@@ -5,12 +5,12 @@ modelSpecs:
   enforce: true
   list:
     - name: "gpt-4o-mini"
-      label: "4o-mini"
+      label: "GPT 4o-mini"
       preset:
         endpoint: "openAI"
         model: "gpt-4o-mini"
     - name: "gpt-4o"
-      label: "4o"
+      label: "GPT 4o"
       preset:
         endpoint: "openAI"
         model: "gpt-4o"
